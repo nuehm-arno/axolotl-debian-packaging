@@ -35,7 +35,9 @@ make prebuild_package
 
 ## Building the Debian package
 In this step, you will be asked to add metadata to the package files "changelog" and "copyright".
+
 The info for "changelog" is the number of closed bugs "#nnnn", which I cannot provide (--> resulting in a lintian error message).
+
 And the info for "copyright" is Upstream-Contact "nanu-c" and Source "https://github.com/nanu-c/axolotl".
 ```
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
