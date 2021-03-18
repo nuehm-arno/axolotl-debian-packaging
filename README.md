@@ -1,5 +1,5 @@
 # axolotl-debian-packaging
-These files are used to create a Debian package of [Axolotl](https://github.com/nanu-c/axolotl) for Mobian (Debian aarch64/arm64)
+These files are used to create an experimental Debian package of [Axolotl](https://github.com/nanu-c/axolotl) for Mobian (Debian aarch64/arm64).
 
 # Checking/Feedback
 Please feel free to check the files for non-Debian-conform commands or behaviour. Any feedback is very welcome.
@@ -44,4 +44,4 @@ make build_package
 
 # Lintian log file
 The log file was created using this setup.
-Please let me know, if you have suggestions - any help is welcome!
+Please let me know, if you have suggestions - any help is welcome.
