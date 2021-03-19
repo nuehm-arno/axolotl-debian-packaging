@@ -6,8 +6,9 @@ Please feel free to check the files for non-Debian-conform commands or behaviour
 
 # Building steps
 ## Download source
-You need to have "go" installed to get the source compatible for the next steps..
+You need to have "go" installed to get the source compatible for the next steps.
 ```
+sudo apt install golang
 go get -d -u github.com/nanu-c/axolotl/
 ```
 
