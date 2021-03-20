@@ -27,7 +27,7 @@ and follow the next steps.
 ## Building the binary
 ```
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make build
+make
 ```
 
 ## Prebuilding the Debian package
