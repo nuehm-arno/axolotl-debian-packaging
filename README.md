@@ -33,7 +33,7 @@ make
 ## Prebuilding the Debian package
 ```
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make prebuild_package
+make prebuild_package_arm64
 ```
 
 ## Building the Debian package
@@ -44,7 +44,7 @@ In "changelog" the bug number of "intend-to-package" (ITP) has to be added, when
 In "copyright" the Upstream-Contact is "nanu-c" and the Source is "https://github.com/nanu-c/axolotl".
 ```
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make build_package
+make build_package_arm64
 ```
 
 # Lintian log file
