@@ -17,7 +17,7 @@ The files found here are not yet uploaded to the source, because they are experi
 
 To check the behaviour, copy them into the source folder via
 ```
-git clone https://github.com/nuehm-arno/axolotl-debian-packaging.git
+git clone https://github.com/nuehm-arno/axolotl-debian-packaging
 cp -r $HOME/axolotl-debian-packaging/deb $(go env GOPATH)/src/github.com/nanu-c/axolotl
 cp -r $HOME/axolotl-debian-packaging/Makefile $(go env GOPATH)/src/github.com/nanu-c/axolotl
 ```
