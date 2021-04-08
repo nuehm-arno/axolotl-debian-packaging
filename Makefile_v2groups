@@ -102,7 +102,7 @@ install-arm64: uninstall-arm64
 	@sudo cp $(WORKDIR)/deb/axolotl.desktop /usr/share/applications
 	@sudo cp $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/axolotl/axolotl-web/dist/axolotl.png /usr/share/icons/hicolor/128x128/apps
 	@sudo cp $(WORKDIR)/deb/axolotl.sh /etc/profile.d
-	@bach -c "source /etc/profile.d/axolotl.sh"
+	@bash -c "source /etc/profile.d/axolotl.sh"
 
 uninstall-arm64:
 	@sudo rm -rf /usr/share/axolotl
