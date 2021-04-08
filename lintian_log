@@ -1,7 +1,0 @@
-E: axolotl: arch-dependent-file-in-usr-share usr/share/axolotl/axolotl
-E: axolotl: copyright-file-contains-full-gpl-license
-E: axolotl: copyright-not-using-common-license-for-gpl
-W: axolotl: desktop-command-not-in-package usr/share/applications/axolotl.desktop axolotl
-W: axolotl: hardening-no-pie usr/share/axolotl/axolotl
-W: axolotl: icon-size-and-directory-name-mismatch usr/share/icons/hicolor/128x128/apps/axolotl.png 142x142
-W: axolotl: improbable-bug-number-in-closes 0000
