@@ -1,0 +1,20 @@
+#!/bin/sh
+# postinst script for axolotl
+
+set -e
+
+case "$1" in
+    configure)
+    sudo mv /usr/share/axolotl/axolotl /usr/bin/
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+source /etc/profile.d/axolotl.sh
+exit 0
