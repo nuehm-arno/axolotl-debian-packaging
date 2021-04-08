@@ -46,7 +46,3 @@ In "copyright" the Upstream-Contact is "aaron@nanu-c.org" and the Source is "htt
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
 make build-package-arm64
 ```
-
-# Lintian log file
-The log file was created using this setup.
-Please let me know, if you have suggestions - any help is welcome.
