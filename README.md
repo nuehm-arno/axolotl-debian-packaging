@@ -1,5 +1,5 @@
 # axolotl-debian-packaging
-These files are used to create an experimental Debian package of [Axolotl](https://github.com/nanu-c/axolotl) for Mobian (Debian arm64/aarch64).
+These files are used to create an unofficial Debian package of [Axolotl](https://github.com/nanu-c/axolotl) for Mobian (Debian arm64/aarch64).
 
 # Checking/Feedback
 Please feel free to check the files for non-Debian-conform commands or behaviour. Any feedback is very welcome.
