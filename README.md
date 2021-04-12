@@ -26,14 +26,12 @@ and follow the next steps.
 
 ## Building the binary
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make build-arm64
+cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make build-arm64
 ```
 
 ## Prebuilding the Debian package
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make prebuild-package-arm64
+cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make prebuild-package-arm64
 ```
 
 ## Building the Debian package
@@ -43,6 +41,5 @@ In "changelog" the bug number of "intend-to-package" (ITP) has to be added, when
 
 In "copyright" the Upstream-Contact is "aaron@nanu-c.org" and the Source is "https://github.com/nanu-c/axolotl".
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl
-make build-package-arm64
+cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make build-package-arm64
 ```
