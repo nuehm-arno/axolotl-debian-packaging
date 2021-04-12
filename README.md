@@ -43,3 +43,6 @@ In "copyright" the Upstream-Contact is "aaron@nanu-c.org" and the Source is "htt
 ```
 cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make build-package-arm64
 ```
+
+## Lintian log
+You can find the Lintian log [here](lintian_log).
