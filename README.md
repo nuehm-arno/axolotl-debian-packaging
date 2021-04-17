@@ -14,6 +14,7 @@ go get -d -u github.com/nanu-c/axolotl/
 
 Use these commands to build a specific branch of Axolotl (v0.9.9 for example).
 ```
+sudo apt install golang git
 export GO111MODULE=on
 go get -d github.com/nanu-c/axolotl@v0.9.9
 ```
