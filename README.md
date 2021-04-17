@@ -12,6 +12,12 @@ sudo apt install golang git
 go get -d -u github.com/nanu-c/axolotl/
 ```
 
+Use these commands to build a specific branch of Axolotl (v0.9.9 for example).
+```
+export GO111MODULE=on
+go get -d github.com/nanu-c/axolotl@v0.9.9
+```
+
 ## Copy necessary files
 The files found here are not yet uploaded to the source, because they are experimental.
 
@@ -23,15 +29,23 @@ cat $HOME/axolotl-debian-packaging/Makefile >> $(go env GOPATH)/src/github.com/n
 ```
 and follow the next steps.
 
+And for building a specific branch (v0.9.9), use these commands
+```
+git clone https://github.com/nuehm-arno/axolotl-debian-packaging
+cp -r $HOME/axolotl-debian-packaging/deb $(go env GOPATH)/pkg/mod/github.com/nanu-c/axolotl@v0.9.9
+cat $HOME/axolotl-debian-packaging/Makefile_v0.9.9-3 >> $(go env GOPATH)/pkg/mod/github.com/nanu-c/axolotl@v0.9.9/Makefile
+```
 
 ## Building the binary
+Execute this in the Axolotl folder
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make build-arm64
+make build-arm64
 ```
 
 ## Prebuilding the Debian package
+Execute this in the Axolotl folder
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make prebuild-package-arm64
+make prebuild-package-arm64
 ```
 
 ## Building the Debian package
@@ -40,8 +54,10 @@ During this step, you will be asked to add metadata to the package files "change
 In "changelog" the bug number of "intend-to-package" (ITP) has to be added, when available.
 
 In "copyright" the Upstream-Contact is "aaron@nanu-c.org" and the Source is "https://github.com/nanu-c/axolotl".
+
+Execute this in the Axolotl folder
 ```
-cd $(go env GOPATH)/src/github.com/nanu-c/axolotl && make build-package-arm64
+make build-package-arm64
 ```
 
 ## Lintian log
