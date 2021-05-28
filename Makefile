@@ -30,7 +30,7 @@ check-platform-arm64:
 dependencies-arm64:
 	@echo "Installing dependencies for building Axolotl..."
 	@sudo apt update
-	@sudo apt install golang nodejs npm python
+	@sudo apt install git golang nodejs npm python
 
 build-arm64:
 	@echo "Downloading (go)..."
@@ -52,9 +52,7 @@ build-arm64:
 prebuild-package-arm64: package-clean-arm64
 	@echo "Prebuilding Debian package..."
 # Get the source tarball
-	@cd $(WORKDIR) && wget https://github.com/nanu-c/axolotl/archive/v$(AXOLOTL_VERSION).tar.gz
-# Rename source tarball
-	@mv $(WORKDIR)/v$(AXOLOTL_VERSION).tar.gz $(WORKDIR)/axolotl-$(AXOLOTL_VERSION).tar.gz
+	@wget https://github.com/nanu-c/axolotl/archive/v$(AXOLOTL_VERSION).tar.gz -O $(WORKDIR)/axolotl-$(AXOLOTL_VERSION).tar.gz
 # Prepare packaging folder
 	@mkdir -p $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/axolotl
 	@cp -r $(WORKDIR)/build/linux-arm64/* $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/axolotl
@@ -73,6 +71,7 @@ prebuild-package-arm64: package-clean-arm64
 	@cp $(WORKDIR)/deb/axolotl.install $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/debian
 	@cp $(WORKDIR)/deb/postinst $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/debian
 	@cp $(WORKDIR)/deb/control $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/debian/control
+	@wget https://github.com/nanu-c/zkgroup/raw/main/lib/libzkgroup_linux_arm64.so -P  $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/usr/lib
 	@mv $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/axolotl/axolotl $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/usr/bin
 	@echo "Prebuilding Debian package complete"
 
@@ -88,6 +87,8 @@ build-package-arm64:
 install-arm64: uninstall-arm64
 # Use for testing purposes only after prebuild-package-arm64
 	@echo "Installing Axololt"
+# Copy libzkgroup
+	@sudo wget https://github.com/nanu-c/zkgroup/raw/main/lib/libzkgroup_linux_arm64.so -P /usr/lib
 	@sudo mkdir -p /usr/share/axolotl
 	@sudo cp -r $(WORKDIR)/axolotl-$(AXOLOTL_VERSION)/axolotl/* /usr/share/axolotl
 	@sudo mv /usr/share/axolotl/axolotl /usr/bin/
@@ -103,6 +104,7 @@ uninstall-arm64:
 	@sudo rm -f /usr/share/applications/axolotl.desktop
 	@sudo rm -f /usr/share/icons/hicolor/128x128/apps/axolotl.png
 	@sudo rm -f /etc/profile.d/axolotl.sh
+	@sudo rm -f /usr/lib/libzkgroup_linux_arm64.so
 	@echo "Removing complete"
 
 clean-arm64:
