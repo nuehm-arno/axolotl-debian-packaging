@@ -37,9 +37,6 @@ build-arm64:
 	@cd $(WORKDIR) && go mod download
 	@echo "Installing (npm)..."
 	@cd $(WORKDIR)/axolotl-web && npm ci
-	@echo "node-sass does not support arm64/aarch64 so it has to be rebuilt"
-	@echo "Rebuilding of npm-sass..."
-	@cd $(WORKDIR)/axolotl-web && npm rebuild node-sass
 	@echo "Building (npm)..."
 	@cd $(WORKDIR)/axolotl-web && npm run build
 	@mkdir -p $(WORKDIR)/build/linux-arm64/axolotl-web
