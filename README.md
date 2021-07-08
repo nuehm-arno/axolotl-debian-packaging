@@ -1,3 +1,5 @@
+# DEPREACTED - In favour of the Makefile in the source repo folder.
+
 # axolotl-debian-packaging
 These files are used to create an unofficial Debian package of [Axolotl](https://github.com/nanu-c/axolotl) for Mobian (Debian arm64/aarch64).
 
